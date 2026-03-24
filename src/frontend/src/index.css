@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 200 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque.woff2") format("woff2");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    --background: 0.085 0.028 232;
+    --foreground: 0.95 0.02 215;
+    --card: 0.17 0.045 225;
+    --card-foreground: 0.95 0.02 215;
+    --popover: 0.19 0.05 225;
+    --popover-foreground: 0.95 0.02 215;
+    --primary: 0.77 0.12 185;
+    --primary-foreground: 0.1 0.03 230;
+    --secondary: 0.2 0.05 222;
+    --secondary-foreground: 0.77 0.12 185;
+    --muted: 0.2 0.05 222;
+    --muted-foreground: 0.72 0.04 215;
+    --accent: 0.77 0.12 185;
+    --accent-foreground: 0.1 0.03 230;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.25 0.055 220;
+    --input: 0.25 0.055 220;
+    --ring: 0.77 0.12 185;
+    --chart-1: 0.77 0.12 185;
+    --chart-2: 0.65 0.11 185;
+    --chart-3: 0.55 0.09 200;
+    --chart-4: 0.85 0.1 183;
+    --chart-5: 0.45 0.08 220;
+    --sidebar: 0.13 0.04 225;
+    --sidebar-foreground: 0.95 0.02 215;
+    --sidebar-primary: 0.77 0.12 185;
+    --sidebar-primary-foreground: 0.1 0.03 230;
+    --sidebar-accent: 0.2 0.05 222;
+    --sidebar-accent-foreground: 0.95 0.02 215;
+    --sidebar-border: 0.25 0.055 220;
+    --sidebar-ring: 0.77 0.12 185;
+  }
+
+  .dark {
+    --background: 0.085 0.028 232;
+    --foreground: 0.95 0.02 215;
+    --card: 0.17 0.045 225;
+    --card-foreground: 0.95 0.02 215;
+    --popover: 0.19 0.05 225;
+    --popover-foreground: 0.95 0.02 215;
+    --primary: 0.77 0.12 185;
+    --primary-foreground: 0.1 0.03 230;
+    --secondary: 0.2 0.05 222;
+    --secondary-foreground: 0.77 0.12 185;
+    --muted: 0.2 0.05 222;
+    --muted-foreground: 0.72 0.04 215;
+    --accent: 0.77 0.12 185;
+    --accent-foreground: 0.1 0.03 230;
+    --destructive: 0.704 0.191 22.216;
+    --destructive-foreground: 0.205 0 0;
+    --border: 0.25 0.055 220;
+    --input: 0.25 0.055 220;
+    --ring: 0.77 0.12 185;
+    --chart-1: 0.77 0.12 185;
+    --chart-2: 0.65 0.11 185;
+    --chart-3: 0.55 0.09 200;
+    --chart-4: 0.85 0.1 183;
+    --chart-5: 0.45 0.08 220;
+    --sidebar: 0.13 0.04 225;
+    --sidebar-foreground: 0.95 0.02 215;
+    --sidebar-primary: 0.77 0.12 185;
+    --sidebar-primary-foreground: 0.1 0.03 230;
+    --sidebar-accent: 0.2 0.05 222;
+    --sidebar-accent-foreground: 0.95 0.02 215;
+    --sidebar-border: 0.25 0.055 220;
+    --sidebar-ring: 0.77 0.12 185;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+    background: linear-gradient(
+      160deg,
+      oklch(0.085 0.028 232) 0%,
+      oklch(0.11 0.038 228) 100%
+    );
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .text-teal {
+    color: oklch(0.77 0.12 185);
+  }
+  .text-teal-mint {
+    color: oklch(0.85 0.1 183);
+  }
+  .text-secondary-muted {
+    color: oklch(0.72 0.04 215);
+  }
+  .bg-card-surface {
+    background-color: oklch(0.17 0.045 225);
+  }
+  .bg-card-surface-2 {
+    background-color: oklch(0.19 0.05 222);
+  }
+  .bg-navy-deep {
+    background-color: oklch(0.085 0.028 232);
+  }
+  .bg-pill {
+    background-color: oklch(0.2 0.05 222);
+  }
+  .border-subtle {
+    border-color: oklch(0.25 0.055 220);
+  }
+  .card-glow {
+    box-shadow: 0 0 0 1px oklch(0.25 0.055 220), 0 4px 24px
+      oklch(0.085 0.028 232 / 0.8);
+  }
+  .card-glow-teal {
+    box-shadow: 0 0 0 1px oklch(0.77 0.12 185 / 0.3), 0 4px 24px
+      oklch(0.77 0.12 185 / 0.1);
+  }
+  .teal-gradient-text {
+    background: linear-gradient(
+      135deg,
+      oklch(0.85 0.1 183),
+      oklch(0.77 0.12 185)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .section-divider {
+    border-top: 1px solid oklch(0.25 0.055 220);
+  }
+  .nav-link {
+    @apply text-sm font-medium transition-colors duration-200;
+    color: oklch(0.72 0.04 215);
+  }
+  .nav-link:hover {
+    color: oklch(0.77 0.12 185);
+  }
+  .nav-link.active {
+    color: oklch(0.77 0.12 185);
+  }
+}
